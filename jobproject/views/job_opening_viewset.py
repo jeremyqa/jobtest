@@ -8,7 +8,7 @@ from jobproject.services.permissions.DjangoModelPermissionsPlusGet import (
 
 class _JobOpeningSerializer(serializers.Serializer):
     created = serializers.DateTimeField(read_only=True)
-    applied = serializers.BooleanField()
+    applied = serializers.DateTimeField()
     active = serializers.BooleanField()
     notes = serializers.CharField()
     url = serializers.CharField()

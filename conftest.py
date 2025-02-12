@@ -8,6 +8,7 @@ class ExampleUserCreator(Protocol):
     def __call__(
         self,
         username: str = "TestFriend",
+        password: str = "Test123!",
         firstname: str = "Test123!",
         lastname: str = "Tes",
         email: str = "test@example.com",
@@ -22,6 +23,7 @@ class ExampleUserCreator(Protocol):
 def example_user_creator() -> ExampleUserCreator:
     def _inner_example_user_creator(
         username: str = "TestFriend",
+        password: str = "Test123!",
         firstname: str = "Test123!",
         lastname: str = "Tes",
         email: str = "test@example.com",
@@ -31,6 +33,7 @@ def example_user_creator() -> ExampleUserCreator:
     ) -> User:
         return User.objects.create_user(
             username=username,
+            password=password,
             first_name=firstname,
             last_name=lastname,
             email=email,

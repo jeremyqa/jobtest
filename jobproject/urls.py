@@ -23,7 +23,7 @@ from rest_framework_simplejwt.views import (
 )
 
 from jobproject.helloworldviews.helloworld import HelloViewSet
-from jobproject.views.JobOpeningViewset import JobOpeningViewSet
+from jobproject.views.job_opening_viewset import JobOpeningViewSet
 
 urlpatterns = [
     path("admin/", admin.site.urls),
