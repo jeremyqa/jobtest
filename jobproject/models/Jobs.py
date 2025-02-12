@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class JobOpening(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     applied = models.DateTimeField(null=True)
@@ -12,4 +13,3 @@ class JobOpening(models.Model):
 
     def __str__(self) -> str:
         return f"JobOpening: `{self.title}` @ `{self.company}`"
-

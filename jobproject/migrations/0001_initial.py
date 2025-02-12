@@ -7,18 +7,17 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='JobOpening',
+            name="JobOpening",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created', models.DateTimeField(auto_now_add=True)),
-                ('applied', models.DateTimeField(null=True)),
-                ('active', models.BooleanField(default=True)),
-                ('notes', models.TextField(null=True)),
+                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                ("created", models.DateTimeField(auto_now_add=True)),
+                ("applied", models.DateTimeField(null=True)),
+                ("active", models.BooleanField(default=True)),
+                ("notes", models.TextField(null=True)),
             ],
         ),
     ]

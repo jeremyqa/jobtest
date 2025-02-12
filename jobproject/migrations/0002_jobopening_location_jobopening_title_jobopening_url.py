@@ -6,26 +6,26 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('jobproject', '0001_initial'),
+        ("jobproject", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='jobopening',
-            name='location',
-            field=models.CharField(default=''),
+            model_name="jobopening",
+            name="location",
+            field=models.CharField(default=""),
             preserve_default=False,
         ),
         migrations.AddField(
-            model_name='jobopening',
-            name='title',
-            field=models.CharField(default=''),
+            model_name="jobopening",
+            name="title",
+            field=models.CharField(default=""),
             preserve_default=False,
         ),
         migrations.AddField(
-            model_name='jobopening',
-            name='url',
-            field=models.URLField(default=''),
+            model_name="jobopening",
+            name="url",
+            field=models.URLField(default=""),
             preserve_default=False,
         ),
     ]

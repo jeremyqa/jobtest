@@ -6,14 +6,14 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('jobproject', '0002_jobopening_location_jobopening_title_jobopening_url'),
+        ("jobproject", "0002_jobopening_location_jobopening_title_jobopening_url"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='jobopening',
-            name='company',
-            field=models.CharField(default='', max_length=255),
+            model_name="jobopening",
+            name="company",
+            field=models.CharField(default="", max_length=255),
             preserve_default=False,
         ),
     ]

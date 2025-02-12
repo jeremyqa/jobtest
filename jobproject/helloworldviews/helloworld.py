@@ -5,4 +5,4 @@ from rest_framework.response import Response
 
 class HelloViewSet(viewsets.ViewSet):
     def basic(self, request: Request) -> Response:
-        return Response({'message': 'Hello World!'})
+        return Response({"message": "Hello World!"})
