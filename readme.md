@@ -9,6 +9,7 @@
 
 ### secret management / config
 - maybe a dotenv file?
+
 #### specific secrets and config
 - signing key
 - debug mode
@@ -23,3 +24,6 @@
 
 ### cache
 - redis, probably
+
+### deps
+- probably use poetry or something?

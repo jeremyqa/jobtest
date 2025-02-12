@@ -1,6 +1,9 @@
-from rest_framework import viewsets, mixins, serializers
+from rest_framework import mixins, serializers, viewsets
+
 from jobproject.models import JobOpening
-from jobproject.services.permissions.DjangoModelPermissionsPlusGet import DjangoModelPermissionsPlusGet
+from jobproject.services.permissions.DjangoModelPermissionsPlusGet import (
+    DjangoModelPermissionsPlusGet,
+)
 
 
 class _JobOpeningSerializer(serializers.Serializer):

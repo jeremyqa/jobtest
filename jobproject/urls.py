@@ -17,12 +17,13 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from jobproject.helloworldviews.helloworld import HelloViewSet
-from jobproject.views.JobOpeningViewset import JobOpeningViewSet
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
+
+from jobproject.helloworldviews.helloworld import HelloViewSet
+from jobproject.views.JobOpeningViewset import JobOpeningViewSet
 
 urlpatterns = [
     path("admin/", admin.site.urls),
