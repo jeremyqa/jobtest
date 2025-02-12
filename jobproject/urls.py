@@ -18,5 +18,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from jobproject.helloworldviews.helloworld import HelloViewSet
+from jobproject.views.JobOpeningViewset import JobOpeningViewSet
 
-urlpatterns = [path("admin/", admin.site.urls), path("helloworld/", HelloViewSet.as_view({"get": "basic"}))]
+
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("helloworld/", HelloViewSet.as_view({"get": "basic"})),
+    path("api/v1/job-openings/", JobOpeningViewSet.as_view({"get": "list"})),
+]
