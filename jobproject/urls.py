@@ -19,10 +19,15 @@ from django.contrib import admin
 from django.urls import path
 from jobproject.helloworldviews.helloworld import HelloViewSet
 from jobproject.views.JobOpeningViewset import JobOpeningViewSet
-
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("api/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path("api/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     path("helloworld/", HelloViewSet.as_view({"get": "basic"})),
     path("api/v1/job-openings/", JobOpeningViewSet.as_view({"get": "list"})),
 ]

@@ -7,8 +7,11 @@
 - get application talking to it
 - run migrations
 
-### secret management
+### secret management / config
 - maybe a dotenv file?
+#### specific secrets and config
+- signing key
+- debug mode
 
 ### dockerize main app
 - verify dockerfile works
@@ -17,3 +20,6 @@
 ### production ready serving
 - gunicorn?
 - nginx?
+
+### cache
+- redis, probably

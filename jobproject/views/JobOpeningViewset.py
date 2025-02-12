@@ -1,6 +1,6 @@
 from rest_framework import viewsets, mixins, serializers
 from jobproject.models import JobOpening
-from rest_framework.permissions import DjangoModelPermissions
+from jobproject.services.permissions.DjangoModelPermissionsPlusGet import DjangoModelPermissionsPlusGet
 
 
 class _JobOpeningSerializer(serializers.Serializer):
@@ -17,4 +17,4 @@ class _JobOpeningSerializer(serializers.Serializer):
 class JobOpeningViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
     queryset = JobOpening.objects.all()
     serializer_class = _JobOpeningSerializer
-    permission_classes = [DjangoModelPermissions]
+    permission_classes = [DjangoModelPermissionsPlusGet]
