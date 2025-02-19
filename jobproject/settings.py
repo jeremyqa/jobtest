@@ -80,7 +80,7 @@ WSGI_APPLICATION = "jobproject.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
+        "ENGINE": config.get("DB_ENGINE"),
         "HOST": config.get("DB_HOST"),
         "NAME": config.get("DB_NAME"),
         "PASSWORD": config.get("DB_PASSWORD"),
