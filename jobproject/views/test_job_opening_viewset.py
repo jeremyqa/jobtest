@@ -52,9 +52,9 @@ class TestJobOpeningViewSet:
         assert response.json() == [
             {
                 "active": True,
-                "applied": "2025-01-01T00:00:00Z",
+                "applied": "2025-01-01T00:00:00-05:00",
                 "company": "Example Company",
-                "created": "2024-12-31T00:00:00Z",
+                "created": "2024-12-30T19:00:00-05:00",
                 "location": "Remote",
                 "notes": "This is my note",
                 "title": "Cool Title",

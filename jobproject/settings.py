@@ -12,20 +12,20 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from datetime import timedelta
 from pathlib import Path
+from dotenv import dotenv_values
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+config = dotenv_values(".env")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-# TODO: fix this
-SECRET_KEY = "django-insecure--1(ynkrw^nqo1v#jj0v&axjdo1_3&oc7vjk+!m8$c^k8bj8_)x"
+SECRET_KEY = config.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True  # TODO: fix this, too
+DEBUG = True if config.get("DEBUG", "not set?").lower() == "true" else False
 
 ALLOWED_HOSTS = []
 
@@ -83,9 +83,9 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql",
         "HOST": "localhost",
         "PORT": 15432,
-        "NAME": "jobproject",
-        "USER": "jobproject",
-        "PASSWORD": "helloworld123!!",
+        "NAME": config.get("DB_NAME"),
+        "USER": config.get("DB_USER"),
+        "PASSWORD": config.get("DB_PASSWORD"),
     }
 }
 
