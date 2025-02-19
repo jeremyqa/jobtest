@@ -81,11 +81,11 @@ WSGI_APPLICATION = "jobproject.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "HOST": "localhost",
-        "PORT": 15432,
+        "HOST": config.get("DB_HOST"),
         "NAME": config.get("DB_NAME"),
-        "USER": config.get("DB_USER"),
         "PASSWORD": config.get("DB_PASSWORD"),
+        "PORT": config.get("DB_PORT"),
+        "USER": config.get("DB_USER"),
     }
 }
 
