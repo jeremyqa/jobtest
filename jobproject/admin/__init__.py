@@ -4,7 +4,7 @@ from jobproject.models import JobOpening
 
 
 class JobOpeningAdmin(admin.ModelAdmin):
-    list_display = ["created", "company", "applied", "active"]
+    list_display = ["applied", "company", "title", "active"]
     list_filter = [
         "active",
     ]

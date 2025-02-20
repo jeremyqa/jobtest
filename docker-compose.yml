@@ -8,7 +8,7 @@ services:
       - ./db-data/:/var/lib/postgresql/data/
 #      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
-      POSTGRES_DB: jobproject
-      POSTGRES_USER: jobproject
-      POSTGRES_PASSWORD: helloworld123!!
+      POSTGRES_DB: "jobproject"
+      POSTGRES_USER: "jobproject"
+      POSTGRES_PASSWORD: "helloworld123!!"
 
