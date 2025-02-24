@@ -4,3 +4,4 @@ psycopg[binary]==3.2.4
 djangorestframework-simplejwt[crypto]
 python-dotenv==1.0.1
 waitress==3.0.2
+django-cors-headers==4.7.0
