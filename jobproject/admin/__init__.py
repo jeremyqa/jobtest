@@ -8,6 +8,7 @@ class JobOpeningAdmin(admin.ModelAdmin):
     list_filter = [
         "active",
     ]
+    search_fields = ["company", "title"]
 
 
 admin.site.register(JobOpening, JobOpeningAdmin)
