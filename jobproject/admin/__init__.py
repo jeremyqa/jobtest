@@ -4,11 +4,9 @@ from jobproject.models import JobOpening
 
 
 class JobOpeningAdmin(admin.ModelAdmin):
-    list_display = ["applied", "company", "title", "active"]
-    list_filter = [
-        "active",
-    ]
-    search_fields = ["company", "title", "url"]
+    list_display = ["applied", "company", "title", "active", "status"]
+    list_filter = ["active", "status"]
+    search_fields = ["company", "title", "url", "status"]
 
 
 admin.site.register(JobOpening, JobOpeningAdmin)
