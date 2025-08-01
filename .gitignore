@@ -3,3 +3,5 @@ db-data
 .idea
 *.pyc
 .env
+scratch
+__pycache__

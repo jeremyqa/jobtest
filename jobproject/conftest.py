@@ -24,7 +24,7 @@ def example_user_creator() -> ExampleUserCreator:
     def _inner_example_user_creator(
         username: str = "TestFriend",
         password: str = "Test123!",
-        firstname: str = "Test123!",
+        firstname: str = "Firs",
         lastname: str = "Tes",
         email: str = "test@example.com",
         is_staff: bool = False,

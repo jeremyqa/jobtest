@@ -1,9 +1,9 @@
 import pytest
 from django.contrib.auth.models import User
 from django.test.client import Client
-from rest_framework import status
+from rest_framework import status # type: ignore
 
-from conftest import ExampleUserCreator
+from jobproject.conftest import ExampleUserCreator
 
 
 def test_is_it_working() -> None:
