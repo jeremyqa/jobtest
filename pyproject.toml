@@ -11,7 +11,7 @@ dependencies = [
     "djangorestframework-queryfields==1.1.0",
     "djangorestframework-simplejwt[crypto]>=5.5.1",
     "psycopg[binary]==3.3.8",
-    "python-dotenv==1.0.1",
+    "python-dotenv~=1.2",
     "waitress==3.0.2",
 ]
 
