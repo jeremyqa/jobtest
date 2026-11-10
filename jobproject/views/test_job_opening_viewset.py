@@ -2,7 +2,7 @@ import pytest
 from django.contrib.auth.models import Permission
 from django.test.client import Client
 from freezegun import freeze_time
-from rest_framework import status # type: ignore
+from rest_framework import status
 
 from jobproject.conftest import ExampleUserCreator
 from jobproject.models import JobOpening

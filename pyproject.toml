@@ -15,15 +15,36 @@ dependencies = [
     "waitress==3.0.2",
 ]
 
-[tool.black]
+[tool.ruff]
 line-length = 120
-extend-exclude = '''db-data'''
+exclude = [
+    "manage.py",
+]
+
+[tool.ruff.lint]
+extend-select = [
+    "DJ",       # flake8-django: Django-specific bugs
+    "E",        # pycodestyle errors
+    "F",        # Pyflakes
+    "W",        # pycodestyle warnings
+    "I",        # isort
+    "UP",       # pyupgrade
+    "B",        # flake8-bugbear
+]
+
+ignore = [
+    "N999"  # invalid module name.
+]  
+
+[tool.ruff.lint.per-file-ignores]
+"**/migrations/*.py" = ["E501", "RUF012"]
+"**/models/*.py" = ["RUF012"]
+"**/views/*.py" = ["RUF012"]
+"**/admin/*.py" = ["RUF012"]
+
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "jobproject.settings"
-
-[tool.isort]
-profile = "black"
 
 [dependency-groups]
 dev = [
@@ -31,4 +52,5 @@ dev = [
     "pdbpp~=0.12",
     "pytest==9.2.0",
     "pytest-django~=4.10",
+    "ruff~=0.17",
 ]

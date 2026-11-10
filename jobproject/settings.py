@@ -26,7 +26,7 @@ config = dotenv_values(".env")
 SECRET_KEY = config.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True if config.get("DEBUG", "not set?").lower() == "true" else False
+DEBUG = config.get("DEBUG", "not set?").lower() == "true"
 
 ALLOWED_HOSTS = []
 
@@ -85,7 +85,6 @@ DATABASES = {
     "default": {
         "ENGINE": config.get("DB_ENGINE"),
         "NAME": BASE_DIR / "db.sqlite3",
-
     }
 }
 

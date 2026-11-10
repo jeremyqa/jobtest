@@ -17,7 +17,7 @@ class JobOpening(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     applied = models.DateTimeField(null=True)
     active = models.BooleanField(default=True)
-    notes = models.TextField(null=True)
+    notes = models.TextField(null=False)
     url = models.URLField()
     company = models.CharField(max_length=255)
     title = models.CharField(max_length=255)
