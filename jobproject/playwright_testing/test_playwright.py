@@ -1,7 +1,8 @@
+from django.contrib.auth.models import Permission
 from playwright.sync_api import Page, expect
 from pytest_django.live_server_helper import LiveServer
+
 from jobproject.conftest import ExampleUserCreator
-from django.contrib.auth.models import Permission
 
 
 def test_hello_world_pw(page: Page, live_server: LiveServer, example_user_creator: ExampleUserCreator) -> None:

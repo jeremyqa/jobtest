@@ -50,7 +50,9 @@ DJANGO_SETTINGS_MODULE = "jobproject.settings"
 dev = [
     "freezegun~=1.5",
     "pdbpp~=0.12",
+    "playwright~=1.65",
     "pytest==9.2.0",
     "pytest-django~=4.10",
+    "pytest-playwright>=0.10.0",
     "ruff~=0.17",
 ]
