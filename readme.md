@@ -1,22 +1,27 @@
-# practice
+# What is this?
 
-## todo
+This is a practice project for testing out django. I needed a place to store job application details, and this was more fun than a spreadsheet.
 
-### database
-- get docker image working
-- get application talking to it
-- run migrations
+## Important tooling
+- Django
+- Django rest framework
+- Pytest
+- Ruff
 
-### dockerize main app
-- verify dockerfile works
-- make docker-compose
+# Dependencies 
 
-### production ready serving
-- waitress 
-- nginx?
+This uses [uv](https://docs.astral.sh/uv/) for dependencies. 
 
-### cache
-- redis, probably
+A previous version was dockerized. Maybe I'll patch that up some day!
 
-### deps
-- probably use poetry or something?
+# Tests and code quality
+
+- All the tests should pass
+  - Even playwright
+- Ruff linter and formatter should be happy
+
+# Future plans
+- Dockerize
+- Set up waitress or gunicorn
+- Add more features
+- Deploy someplace
