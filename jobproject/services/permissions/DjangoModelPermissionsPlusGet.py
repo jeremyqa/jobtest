@@ -2,7 +2,7 @@ from rest_framework.permissions import DjangoModelPermissions
 
 
 class DjangoModelPermissionsPlusGet(DjangoModelPermissions):
-    perms_map = {
+    perms_map = {  # noqa: RUF012
         "GET": ["%(app_label)s.view_%(model_name)s"],
         "OPTIONS": [],
         "HEAD": [],

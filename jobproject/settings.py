@@ -26,7 +26,7 @@ config = dotenv_values(".env")
 SECRET_KEY = config.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True if config.get("DEBUG", "not set?").lower() == "true" else False
+DEBUG = config.get("DEBUG", "not set?").lower() == "true"
 
 ALLOWED_HOSTS = []
 
@@ -84,14 +84,9 @@ WSGI_APPLICATION = "jobproject.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": config.get("DB_ENGINE"),
-        "HOST": config.get("DB_HOST"),
-        "NAME": config.get("DB_NAME"),
-        "PASSWORD": config.get("DB_PASSWORD"),
-        "PORT": config.get("DB_PORT"),
-        "USER": config.get("DB_USER"),
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

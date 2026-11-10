@@ -5,3 +5,6 @@ db-data
 .env
 scratch
 __pycache__
+db.sqlite3
+.pytest_cache
+.ruff_cache

@@ -1,0 +1,38 @@
+name: Tests & Code Quality
+
+on: [push]
+
+jobs:
+  Test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+    - name: "Set up Python"
+      uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+      with:
+        python-version-file: "pyproject.toml"
+
+    - name: Install uv
+      uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+      with:
+        version: "0.13.7"
+        enable-cache: true
+    
+    - name: Install the project
+      run: uv sync --locked --all-extras --dev
+
+    - name: Seed .env file
+      run: |
+        echo "SECRET_KEY='TEST_KEY_POTATO'" >> .env
+        echo "DB_ENGINE='django.db.backends.sqlite3'" >> .env
+
+    - name: Run quality checks
+      run: |
+        uv run ruff check
+        uv run ruff format --check
+
+    - name: Run tests
+      run: uv run pytest -m "not browser"

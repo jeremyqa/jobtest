@@ -1,7 +1,7 @@
 import pytest
 from django.contrib.auth.models import User
 from django.test.client import Client
-from rest_framework import status # type: ignore
+from rest_framework import status  # type: ignore
 
 from jobproject.conftest import ExampleUserCreator
 
