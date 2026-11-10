@@ -20,9 +20,9 @@ class JobOpening(models.Model):
     notes = models.TextField(null=True)
     url = models.URLField()
     company = models.CharField(max_length=255)
-    title = models.CharField()
-    location = models.CharField()
-    status = models.CharField(choices=job_statuses, default=APPLIED)
+    title = models.CharField(max_length=255)
+    location = models.CharField(max_length=255)
+    status = models.CharField(choices=job_statuses, default=APPLIED, max_length=32)
 
     def __str__(self) -> str:
         return f"JobOpening: `{self.title}` @ `{self.company}`"

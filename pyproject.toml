@@ -1,3 +1,20 @@
+[project]
+name = "jobproject"
+version = "2.0.0"
+requires-python = ">=3.13"
+dependencies = [
+    "django~=6.1",
+    "django-cors-headers==4.7.0",
+    "django-filter==25.1",
+    "djangorestframework~=3.18",
+    "djangorestframework-csv==3.0.2",
+    "djangorestframework-queryfields==1.1.0",
+    "djangorestframework-simplejwt[crypto]>=5.5.1",
+    "psycopg[binary]==3.3.8",
+    "python-dotenv==1.0.1",
+    "waitress==3.0.2",
+]
+
 [tool.black]
 line-length = 120
 extend-exclude = '''db-data'''
@@ -7,3 +24,11 @@ DJANGO_SETTINGS_MODULE = "jobproject.settings"
 
 [tool.isort]
 profile = "black"
+
+[dependency-groups]
+dev = [
+    "freezegun~=1.5",
+    "pdbpp~=0.12",
+    "pytest==9.2.0",
+    "pytest-django~=4.10",
+]
